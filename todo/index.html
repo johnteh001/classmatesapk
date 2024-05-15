@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-image: linear-gradient(to right, seagreen, rgb(71, 207, 71));
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        div {
+            background-color: white;
+            padding: 1em;
+            border-radius: 5px;
+            width: 300px;
+            height: 300px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        header p {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        form {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            column-gap: 4px;
+            margin-bottom: 20px;
+        }
+
+        form input {
+            flex: 3.5;
+            padding: .2em;
+            border: none;
+            border-radius: 5px;
+            border: 1px solid gray;
+        }
+
+        form button {
+            padding: 0.2em;
+            border: none;
+            border-radius: 5px;
+            background-color: gray;
+            color: white;
+            font-weight: 500;
+        }
+
+        ul {
+            list-style: none;
+            height: 42vh;
+            overflow-y: scroll;
+        }
+
+        ul li {
+            padding: .2em;
+            background-color: lightgray;
+            border-radius: 5px;
+            margin: .3em 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        li button{
+            padding: 0.2em .5em;
+            border: none;
+            border-radius: 5px;
+            background-color: red;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        main{
+            font-size: 12px;
+            font-weight: 500;
+            font-style: italic;
+            text-align: right;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo</title>
+</head>
+
+<body>
+
+    <div>
+
+        <header>
+            <h2>TODO APP</h2>
+            <p id="todo_counts">0</p>
+        </header>
+        <form id="submit-handler">
+            <input type="text" placeholder="Add new Todo" id="input-area">
+            <button type="submit">Add</button>
+        </form>
+        <ul id="todo_container">
+        </ul>
+
+        <main>USER ID: RAMANJAGO</main>
+    </div>
+
+    <script src="./index.js"></script>
+
+</body>
+
+</html>

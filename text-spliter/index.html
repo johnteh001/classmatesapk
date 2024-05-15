@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Splitter</title>
+</head>
+
+<body>
+
+    <button onclick="splitWords()">Click to generate</button>
+    <h2>Splitted Words</h2>
+
+    <ul id="words-container">
+
+    </ul>
+
+    <script>
+
+        function splitWords() {
+            let values = prompt('Enter some sentence');
+            if (values.length > 0) {
+
+                let splittedWords = values.split(' ');
+
+                let word = '';
+
+                for (let i = 0; i < splittedWords.length; i++) {
+                    word += `<li>${splittedWords[i]}</li>`;
+                    document.getElementById('words-container').innerHTML = word;
+                }
+            } else {
+                document.getElementById('words-container').innerHTML = '<p>No New Word.</p>';
+            }
+
+        }
+    </script>
+</body>
+
+</html>

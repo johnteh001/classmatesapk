@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Carousel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100vh;
+            position: relative;
+        }
+
+        div {
+            height: 100%;
+            width: 100%;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        main {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="./images/01.jpg" alt="" id="image_container">
+    </div>
+    <main>
+        <button onclick="prev()">prev</button>
+        <button onclick="next()">next</button>
+    </main>
+
+    <script>
+        const image_container = document.getElementById("image_container");
+        let index = 0;
+        const images = [
+            './images/01.jpg',
+            './images/02.jpg',
+            './images/03.jpg',
+            './images/04.jpg',
+            './images/05.jpg',
+            './images/06.jpg',
+            './images/07.jpg',
+            './images/08.jpg',
+            './images/09.jpg',
+            './images/10.jpg'];
+        function prev() {
+            if (index > 0) {
+                index--;
+            }
+            let prevImage = images[index];
+            image_container.src = prevImage
+            console.log({ index, prevImage });
+        }
+
+        function next() {
+            if (index < images.length - 1) {
+                index++;
+            } else {
+                index = 0;
+            }
+            let nextImage = images[index];
+
+            image_container.src = nextImage
+            console.log({ index, nextImage })
+        }
+
+    </script>
+</body>
+
+</html>
